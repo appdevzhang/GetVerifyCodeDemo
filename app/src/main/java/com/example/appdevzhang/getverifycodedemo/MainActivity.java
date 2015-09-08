@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
         getSmsFromPhone();
         sign_bt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {// 功能完成以后解绑服务
 //                getContentResolver().unregisterContentObserver(smsObserver);
                 Log.d(TAG+"unregist","unregisted");
             }
@@ -57,8 +57,8 @@ public class MainActivity extends ActionBarActivity {
             Log.d(TAG+":GETSMS","START");
             String number = cur.getString(cur.getColumnIndex("address"));
             String body = cur.getString(cur.getColumnIndex("body"));
-
-            if(number.contains("15011663043")){
+            // 此处为发来短信的手机号码，测试请修改为自己的手机号码。
+            if(number.contains("150****3043")){
                 Pattern pattern = Pattern.compile("[a-zA-Z0-9]{2}");
                 Matcher matcher = pattern.matcher(body);
 
